@@ -21,7 +21,7 @@ jobs:
       - name: Read version from SKILL.md
         id: v
         run: |
-          VERSION=$(grep -oP '^Версія \K[0-9.]+' akt-obstezhennia/SKILL.md)
+          VERSION=$(grep -oP '^Версія \K[0-9]+\.[0-9]+(-[0-9A-Za-z.]+)?' akt-obstezhennia/SKILL.md)
           test -n "$VERSION" || { echo "No 'Версія X.Y' line in SKILL.md"; exit 1; }
           echo "version=$VERSION" >> "$GITHUB_OUTPUT"
 
@@ -37,6 +37,8 @@ jobs:
             echo "::warning::Release $TAG already exists. Bump 'Версія' in SKILL.md to publish a new one."
             exit 0
           fi
-          gh release create "$TAG" akt-obstezhennia.zip \
+          PRERELEASE=""
+          case "$TAG" in *-*) PRERELEASE="--prerelease" ;; esac
+          gh release create "$TAG" akt-obstezhennia.zip $PRERELEASE \
             --title "Скіл akt-obstezhennia $TAG" \
-            --notes "Upload akt-obstezhennia.zip in Claude settings (Skills), replacing the previous version."
+            --notes "In claude.ai open Customize → Skills, delete the old akt-obstezhennia skill, then upload akt-obstezhennia.zip."
