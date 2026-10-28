@@ -41,4 +41,4 @@ jobs:
           case "$TAG" in *-*) PRERELEASE="--prerelease" ;; esac
           gh release create "$TAG" akt-obstezhennia.zip $PRERELEASE \
             --title "Скіл akt-obstezhennia $TAG" \
-            --notes "In claude.ai open Customize → Skills, delete the old akt-obstezhennia skill, then upload akt-obstezhennia.zip."
+            --notes "In claude.ai open Settings → Skills, delete the old akt-obstezhennia skill, then Add skill and upload akt-obstezhennia.zip."
