@@ -41,6 +41,7 @@ Only anonymised material belongs here. Real acts never get committed.
 1. Copy her lines from the "МОЇ ПРАВКИ" section of the Project instructions.
 2. Fold each rule into `style.md` (or `fields.json` for a default, or `SKILL.md` for a process change). Keep one place per rule.
 3. Bump `Версія X.Y (date)` in `SKILL.md`, commit, merge to `main`.
+   To test a version before she gets it, add a suffix such as `Версія 1.2-alpha`. The workflow publishes it as a pre-release, which the latest-release link skips.
 4. The workflow smoke-tests and publishes a Release with `akt-obstezhennia.zip`.
 5. Replace the skill in her Claude settings with the new zip and clear the merged lines from "МОЇ ПРАВКИ".
 

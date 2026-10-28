@@ -3,6 +3,7 @@
 Commit messages follow [Conventional Commits 1.0.0](https://www.conventionalcommits.org/en/v1.0.0/).
 The commit type tells you how to bump the `Версія X.Y` line in `akt-obstezhennia/SKILL.md`.
 The release workflow reads that line and publishes a new release only when it changes.
+A version with a suffix, such as `1.2-alpha`, becomes a pre-release for testing.
 
 A commit message has two readers: the person who decides the next version, and the person
 running `git log` a year from now to find out why a line exists. Write for both.
