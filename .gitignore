@@ -3,3 +3,4 @@ __pycache__/
 *.zip
 test*.docx
 .idea/
+.playwright-mcp/
