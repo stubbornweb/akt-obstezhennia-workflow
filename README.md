@@ -21,7 +21,7 @@ Personal data (owner, passport, tax number, address, cadastral number, document 
 | `akt-obstezhennia/style.md` | Writing rules, where dictated facts go, building codes (ДК 018-2000), conclusion wordings. |
 | `akt-obstezhennia/example.json` | One real act, anonymised, as Claude's worked example. Also the CI smoke test. |
 | `akt-obstezhennia/scripts/fill_act.py` | Fills the template from JSON. Python standard library only. |
-| `project/instructions.md` | Text for the Project's Instructions field: protected core, current event, her rules. |
+| `prompts/dictation-project-instructions.md` | Text for the Project's Instructions field: protected core, current event, her rules. |
 | `docs/cheat-sheet-uk.md` | Her one-page reminder (Ukrainian). |
 | `tools/` | Maintainer-only: the original blank and the script that turned it into `template.docx`. |
 
@@ -32,7 +32,7 @@ Only anonymised material belongs here. Real acts never get committed.
 1. Create her free account at claude.ai and log in on her office computer and in the Claude app on her phone.
 2. Settings → Privacy: turn off using chats to improve the models.
 3. Settings → Capabilities: turn on code execution and file creation; under Skills, upload `akt-obstezhennia.zip` from the latest GitHub Release. (Menu names can shift slightly between app versions.)
-4. On the computer: Projects → New project → name it "Акти пошкоджень". Paste `project/instructions.md` into the Project's Instructions field.
+4. On the computer: Projects → New project → name it "Акти пошкоджень". Paste `prompts/dictation-project-instructions.md` into the Project's Instructions field.
 5. On her phone: check the Project appears and she can start a chat inside it. If the app doesn't show Projects, she uses ordinary chats named "Об'єкт N" and pastes the Project instructions' first block as her first message. Nothing else changes.
 6. Do one complete test object together: dictate a few lines on the phone, then "Сформуй акт" on the computer, open the Word file, fill one turquoise field.
 

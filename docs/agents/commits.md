@@ -43,7 +43,7 @@ vocabulary this repo uses. Use only these types. Do not invent new ones.
 | `revert`   | Undoing a previous commit (see below)                             | none               |
 
 Bump the version only when the commit changes something inside `akt-obstezhennia/`. The
-release workflow ignores changes outside that folder. `project/instructions.md` is not in
+release workflow ignores changes outside that folder. `prompts/dictation-project-instructions.md` is not in
 the zip: after a change there, paste the new text into her Project by hand.
 
 Types are lowercase. `BREAKING CHANGE` is the one token that must be uppercase.
@@ -68,7 +68,7 @@ Use one of these scopes:
 | `template`    | `akt-obstezhennia/template.docx`                   |
 | `script`      | `akt-obstezhennia/scripts/fill_act.py`             |
 | `example`     | `akt-obstezhennia/example.json`                    |
-| `project`     | `project/instructions.md`                          |
+| `prompts`     | `prompts/dictation-project-instructions.md`        |
 | `cheat-sheet` | `docs/cheat-sheet-uk.md`                           |
 | `tools`       | `tools/`                                           |
 | `release`     | `.github/workflows/release.yml`                    |
@@ -114,20 +114,21 @@ thing. A footer value can run across several lines. It ends at the next token.
 ## Breaking changes
 
 A change is breaking when she has to work differently, or when the setup must be redone,
-for example when a dictation command is renamed or `project/instructions.md` must be pasted
+for example when a dictation command is renamed or `prompts/dictation-project-instructions.md` must be pasted
 again. A breaking change bumps `X` and resets `Y` to 0, whatever its type.
 
 Mark it with `!` before the colon, with a footer, or with both:
 
 ```
-feat(project)!: rename the "Сформуй акт" command to "Акт готовий"
+feat(prompts)!: rename the "Сформуй акт" command to "Акт готовий"
 ```
 
 ```
-feat(project): rename the "Сформуй акт" command to "Акт готовий"
+feat(prompts): rename the "Сформуй акт" command to "Акт готовий"
 
 BREAKING CHANGE: she now says "Акт готовий" to get the act. Paste the
-new project/instructions.md into the Project and update the cheat sheet.
+new prompts/dictation-project-instructions.md into the Project and
+update the cheat sheet.
 ```
 
 If you use `!` alone, the description alone must explain the breaking change. A
