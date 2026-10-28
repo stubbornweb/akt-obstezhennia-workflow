@@ -4,7 +4,7 @@ Turns a field worker's spoken description of a damaged object into a commission 
 
 ## How it works
 
-1. **On site (phone):** in the Claude Project "Акти пошкоджень" she opens a new chat, says "Об'єкт N, дата", then dictates room by room with the microphone button. Claude replies only "Записано". With no internet she dictates into the phone's notes app and pastes the text into the chat later.
+1. **On site (phone):** in the Claude Project "Акти пошкоджень" she opens a new chat and says "Об'єкт" with the object code, a short label only she can read, such as "Об'єкт Г 1/1". The chat carries the same name; she renames it by hand if claude.ai picked another one. Claude asks the object form: 6 short groups of questions about the building, its structures and engineering systems, and the damage date and cause. She answers by voice or taps an option. Then she dictates the damage room by room with the microphone button. Claude replies only "Записано". With no internet she dictates into the phone's notes app and pastes the text into the chat later.
 2. **In the office (computer):** she opens the same chat and writes "Сформуй акт". The skill reads the dictation, asks once about anything missing, writes the act text, and fills the council's blank with a script. She gets a `.docx` and a checklist.
 3. **Finishing:** she types personal data and document numbers into the turquoise `[[...]]` fields in Word, resolves the red `[УТОЧНИТИ: ...]` notes, checks the conclusion, and sends the act.
 
@@ -33,7 +33,7 @@ Only anonymised material belongs here. Real acts never get committed.
 2. Settings → Privacy: turn off using chats to improve the models.
 3. Settings → Capabilities: turn on code execution and file creation. Settings → Skills → Add skill: upload `akt-obstezhennia.zip` from the newest release on the [Releases page](https://github.com/stubbornweb/akt-obstezhennia-workflow/releases), whether it is alpha, beta, or a full release. (Menu names can shift slightly between app versions.)
 4. On the computer: Projects → New project → name it "Акти пошкоджень". Paste `prompts/dictation-project-instructions.md` into the Project's Instructions field.
-5. On her phone: check the Project appears and she can start a chat inside it. If the app doesn't show Projects, she uses ordinary chats named "Об'єкт N" and pastes the Project instructions' first block as her first message. Nothing else changes.
+5. On her phone: check the Project appears and she can start a chat inside it. If the app doesn't show Projects, she uses ordinary chats named "Об'єкт <code>" and pastes the Project instructions' first block as her first message. Nothing else changes.
 6. Do one complete test object together: dictate a few lines on the phone, then "Сформуй акт" on the computer, open the Word file, fill one turquoise field.
 
 ## The 2-week routine
