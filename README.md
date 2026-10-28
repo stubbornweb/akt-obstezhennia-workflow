@@ -22,7 +22,7 @@ Personal data (owner, passport, tax number, address, cadastral number, document 
 | `akt-obstezhennia/example.json` | One real act, anonymised, as Claude's worked example. Also the CI smoke test. |
 | `akt-obstezhennia/scripts/fill_act.py` | Fills the template from JSON. Python standard library only. |
 | `prompts/dictation-project-instructions.md` | Text for the Project's Instructions field: protected core, current event, her rules. |
-| `docs/cheat-sheet-uk.md` | Her one-page reminder (Ukrainian). |
+| `docs/guide-uk.md` | Her guide (Ukrainian): install, update, Project instructions, daily work. Screenshots in `docs/img/`. |
 | `tools/` | Maintainer-only: the original blank and the script that turned it into `template.docx`. |
 
 Only anonymised material belongs here. Real acts never get committed.
@@ -31,7 +31,7 @@ Only anonymised material belongs here. Real acts never get committed.
 
 1. Create her free account at claude.ai and log in on her office computer and in the Claude app on her phone.
 2. Settings → Privacy: turn off using chats to improve the models.
-3. Settings → Capabilities: turn on code execution and file creation. Settings → Skills → Add skill: upload `akt-obstezhennia.zip` from the newest release on the [Releases page](https://github.com/stubbornweb/akt-obstezhennia-workflow/releases), whether it is alpha, beta, or a full release. (Menu names can shift slightly between app versions.)
+3. Install the skill with her, following part 1 of [`docs/guide-uk.md`](docs/guide-uk.md), so she sees each step once. Take the `.zip` from the newest release on the [Releases page](https://github.com/stubbornweb/akt-obstezhennia-workflow/releases), whether it is alpha, beta, or a full release.
 4. On the computer: Projects → New project → name it "Акти пошкоджень". Paste `prompts/dictation-project-instructions.md` into the Project's Instructions field.
 5. On her phone: check the Project appears and she can start a chat inside it. If the app doesn't show Projects, she uses ordinary chats named "Об'єкт <code>" and pastes the Project instructions' first block as her first message. Nothing else changes.
 6. Do one complete test object together: dictate a few lines on the phone, then "Сформуй акт" on the computer, open the Word file, fill one turquoise field.
@@ -43,7 +43,9 @@ Only anonymised material belongs here. Real acts never get committed.
 3. Bump `Версія X.Y (date)` in `SKILL.md`, commit, merge to `main`.
    A suffix such as `Версія 1.2-alpha` or `Версія 1.2-beta` makes the workflow publish a pre-release. She installs and tests the newest release of any kind.
 4. The workflow smoke-tests and publishes a Release with `akt-obstezhennia.zip`.
-5. Replace the skill in her Claude settings with the new zip and clear the merged lines from "МОЇ ПРАВКИ".
+5. Clear the merged lines from "МОЇ ПРАВКИ" in her Project instructions.
+6. Message her: the new version number, one line on what changed, and a link to part 2 of [`docs/guide-uk.md`](docs/guide-uk.md). She updates the skill herself.
+   If `prompts/dictation-project-instructions.md` changed, first set its "ПОТОЧНА ПОДІЯ" to her current event, then add "оновіть інструкції проєкту" to the message. She replaces the whole Instructions text (part 3 of the guide).
 
 ## Changing the blank
 
