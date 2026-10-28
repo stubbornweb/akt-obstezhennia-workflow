@@ -1,6 +1,6 @@
 # Damage inspection acts from dictation
 
-Turns a field worker's spoken description of a damaged object into the Dubno city council's commission inspection act (`.docx`), using only the free Claude plan (web and mobile app).
+Turns a field worker's spoken description of a damaged object into a commission inspection act (`.docx`), using only the free Claude plan (web and mobile app).
 
 ## How it works
 
