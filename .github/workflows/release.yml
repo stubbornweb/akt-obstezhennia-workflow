@@ -1,0 +1,42 @@
+name: Build skill release
+
+on:
+  push:
+    branches: [main]
+    paths: ["akt-obstezhennia/**"]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Smoke test (fill the example act)
+        run: python3 akt-obstezhennia/scripts/fill_act.py --data akt-obstezhennia/example.json --out /tmp/test.docx
+
+      - name: Read version from SKILL.md
+        id: v
+        run: |
+          VERSION=$(grep -oP '^Версія \K[0-9.]+' akt-obstezhennia/SKILL.md)
+          test -n "$VERSION" || { echo "No 'Версія X.Y' line in SKILL.md"; exit 1; }
+          echo "version=$VERSION" >> "$GITHUB_OUTPUT"
+
+      - name: Build zip
+        run: zip -r akt-obstezhennia.zip akt-obstezhennia -x '*__pycache__*'
+
+      - name: Publish release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          TAG="v${{ steps.v.outputs.version }}"
+          if gh release view "$TAG" >/dev/null 2>&1; then
+            echo "::warning::Release $TAG already exists. Bump 'Версія' in SKILL.md to publish a new one."
+            exit 0
+          fi
+          gh release create "$TAG" akt-obstezhennia.zip \
+            --title "Скіл akt-obstezhennia $TAG" \
+            --notes "Upload akt-obstezhennia.zip in Claude settings (Skills), replacing the previous version."
