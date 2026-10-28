@@ -44,4 +44,4 @@ jobs:
           case "$TAG" in *-*) PRERELEASE="--prerelease" ;; esac
           gh release create "$TAG" akt-obstezhennia.zip $PRERELEASE \
             --title "Скіл akt-obstezhennia $TAG" \
-            --notes "In claude.ai open Settings → Skills, delete the old akt-obstezhennia skill, then Add skill and upload akt-obstezhennia.zip."
+            --notes "Як оновити скіл: https://github.com/stubbornweb/akt-obstezhennia-workflow/blob/main/docs/guide-uk.md#2-оновити-скіл"
