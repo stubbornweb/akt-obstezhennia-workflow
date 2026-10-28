@@ -31,7 +31,7 @@ Only anonymised material belongs here. Real acts never get committed.
 
 1. Create her free account at claude.ai and log in on her office computer and in the Claude app on her phone.
 2. Settings → Privacy: turn off using chats to improve the models.
-3. Settings → Capabilities: turn on code execution and file creation; under Skills, upload `akt-obstezhennia.zip` from the latest GitHub Release. (Menu names can shift slightly between app versions.)
+3. Settings → Capabilities: turn on code execution and file creation. Settings → Skills → Add skill: upload `akt-obstezhennia.zip` from the newest release on the [Releases page](https://github.com/stubbornweb/akt-obstezhennia-workflow/releases), whether it is alpha, beta, or a full release. (Menu names can shift slightly between app versions.)
 4. On the computer: Projects → New project → name it "Акти пошкоджень". Paste `prompts/dictation-project-instructions.md` into the Project's Instructions field.
 5. On her phone: check the Project appears and she can start a chat inside it. If the app doesn't show Projects, she uses ordinary chats named "Об'єкт N" and pastes the Project instructions' first block as her first message. Nothing else changes.
 6. Do one complete test object together: dictate a few lines on the phone, then "Сформуй акт" on the computer, open the Word file, fill one turquoise field.
@@ -41,7 +41,7 @@ Only anonymised material belongs here. Real acts never get committed.
 1. Copy her lines from the "МОЇ ПРАВКИ" section of the Project instructions.
 2. Fold each rule into `style.md` (or `fields.json` for a default, or `SKILL.md` for a process change). Keep one place per rule.
 3. Bump `Версія X.Y (date)` in `SKILL.md`, commit, merge to `main`.
-   To test a version before she gets it, add a suffix such as `Версія 1.2-alpha`. The workflow publishes it as a pre-release, which the latest-release link skips.
+   A suffix such as `Версія 1.2-alpha` or `Версія 1.2-beta` makes the workflow publish a pre-release. She installs and tests the newest release of any kind.
 4. The workflow smoke-tests and publishes a Release with `akt-obstezhennia.zip`.
 5. Replace the skill in her Claude settings with the new zip and clear the merged lines from "МОЇ ПРАВКИ".
 
