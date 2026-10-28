@@ -69,7 +69,7 @@ Use one of these scopes:
 | `script`      | `akt-obstezhennia/scripts/fill_act.py`             |
 | `example`     | `akt-obstezhennia/example.json`                    |
 | `prompts`     | `prompts/dictation-project-instructions.md`        |
-| `cheat-sheet` | `docs/cheat-sheet-uk.md`                           |
+| `guide`       | `docs/guide-uk.md`, `docs/img/`                    |
 | `tools`       | `tools/`                                           |
 | `release`     | `.github/workflows/release.yml`                    |
 
@@ -128,7 +128,7 @@ feat(prompts): rename the "Сформуй акт" command to "Акт готов�
 
 BREAKING CHANGE: she now says "Акт готовий" to get the act. Paste the
 new prompts/dictation-project-instructions.md into the Project and
-update the cheat sheet.
+update the guide.
 ```
 
 If you use `!` alone, the description alone must explain the breaking change. A
