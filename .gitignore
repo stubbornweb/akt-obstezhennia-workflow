@@ -4,3 +4,4 @@ __pycache__/
 test*.docx
 .idea/
 .playwright-mcp/
+.claude/worktrees/
